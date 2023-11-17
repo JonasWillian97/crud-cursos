@@ -1,0 +1,15 @@
+$background: transparent;
+$color: #fff;
+$border: none;
+$cursor: pointer;
+
+button{
+    background-color: $background;
+    color: $color;
+    border: $border;
+    cursor: $cursor; 
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
