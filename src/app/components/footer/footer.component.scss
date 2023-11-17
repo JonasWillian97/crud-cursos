@@ -1,0 +1,28 @@
+$bottom: 0;
+$position: fixed;
+$display: flex;
+$align: center;
+$justify: center;
+
+
+footer{
+    bottom: $bottom;
+    position: $position;
+    width: 100vw;
+}
+
+mat-toolbar{
+    display: $display;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+span{
+    font-size: 18px;
+}
+
+@media(max-width: 300px){
+    span{
+        font-size: 14px;
+    }
+}
