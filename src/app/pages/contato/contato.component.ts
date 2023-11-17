@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class ContatoComponent {
 
+  h1: string = "entre em contato conosco";
 }

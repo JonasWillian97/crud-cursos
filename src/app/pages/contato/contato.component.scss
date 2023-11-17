@@ -1,0 +1,21 @@
+$margin: 30px 20px;
+$padding: 20px;
+$display: flex;
+$direction: column;
+$textAlign: center;
+
+
+h1{
+    text-align: $textAlign;
+}
+
+mat-card{
+    margin: $margin;
+    padding: $padding;
+}
+
+form{
+    display: $display;
+    flex-direction: $direction;
+}
+
