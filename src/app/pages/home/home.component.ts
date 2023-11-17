@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+h1: string = "bem vindo ao nosso projeto";
+p: string = "nesse projeto você irá aprender o essencial para desenvolver uma aplicação em angular"
 }
