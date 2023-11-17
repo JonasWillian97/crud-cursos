@@ -2,22 +2,23 @@
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
         <mat-list role="list">
-            <mat-list-item role="listitem" (click)="drawer.toggle()">
+            <mat-list-item role="listitem" (click)="drawer.toggle()" routerLink="home">
                 <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
                 Home
         </mat-list-item>
 
-            <mat-list-item role="listitem" (click)="drawer.toggle()">
+            <mat-list-item role="listitem" (click)="drawer.toggle()" routerLink="cursos">
                 <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="book"></mat-icon>
                 Cursos
             </mat-list-item>
 
-            <mat-list-item role="listitem" (click)="drawer.toggle()">
+            <mat-list-item role="listitem" (click)="drawer.toggle()" routerLink="contato">
                 <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="contacts"></mat-icon>
                 Contato
             </mat-list-item>
           </mat-list>
-    </mat-drawer>
-  
-  </mat-drawer-container>
+        </mat-drawer>
+        
+    </mat-drawer-container>
+    <router-outlet></router-outlet>
 <app-footer></app-footer>
