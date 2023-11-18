@@ -1,0 +1,26 @@
+<mat-card>
+    <h1 *ngIf="!h1register" >{{h1update | titlecase}}</h1>
+    <h1 *ngIf="!h1update" >{{h1register | titlecase}}</h1>
+    <form>
+        <mat-form-field>
+            <mat-label>Curso</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Categoria</mat-label>
+            <mat-select>
+              <mat-option value="front-end">Front-end</mat-option>
+              <mat-option value="back-end">Back-end</mat-option>
+              <mat-option value="bancoo de dados">Banco de dados</mat-option>
+              <mat-option value="outro">Outro</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field floatLabel="always">
+            <mat-label>Preço</mat-label>
+            <input matInput type="number" class="example-right-align" placeholder="0.00">
+            <span matTextPrefix>R$&nbsp;</span>
+          </mat-form-field>
+        </form>
+        <button mat-raised-button color="primary">Salva</button>
+        <button mat-raised-button color="warn">Cancelar</button>
+</mat-card>

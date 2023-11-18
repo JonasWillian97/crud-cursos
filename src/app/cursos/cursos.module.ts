@@ -7,6 +7,7 @@ import { CadastrarCursosComponent } from './cadastrar-cursos/cadastrar-cursos.co
 import { AtualizarCursosComponent } from './atualizar-cursos/atualizar-cursos.component';
 import { TableComponent } from './table/table.component';
 import { MaterialModule } from '../material/material.module';
+import { FormComponent } from './form/form.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { MaterialModule } from '../material/material.module';
     ListarCursosComponent,
     CadastrarCursosComponent,
     AtualizarCursosComponent,
-    TableComponent
+    TableComponent,
+    FormComponent
   ],
   imports: [
     CommonModule,

@@ -1,8 +1,39 @@
+$padding: 20px;
+$width: 100%;
+$background: transparent;
+$border: none;
+$cursor: pointer;
+
 mat-card{
     margin: 50px 20px;
-    padding: 20px;
+    padding: $padding;
 }
 
 table{
-    width: 100%;
+    width: $width;
+    margin-top: 40px;
+}
+
+button{
+    background-color: $background;
+    border: $border;
+    cursor: $cursor;
+}
+
+.add{
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: blue;
+    border-radius: 100%;
+    width: 40px;
+}
+
+.edit{
+    color: orange;
+}
+
+.delete{
+    color: red;
 }
