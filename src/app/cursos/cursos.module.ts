@@ -8,6 +8,7 @@ import { AtualizarCursosComponent } from './atualizar-cursos/atualizar-cursos.co
 import { TableComponent } from './table/table.component';
 import { MaterialModule } from '../material/material.module';
 import { FormComponent } from './form/form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormComponent } from './form/form.component';
   imports: [
     CommonModule,
     CursosRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class CursosModule { }

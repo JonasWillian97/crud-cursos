@@ -2,6 +2,10 @@ $textAlign: center;
 $margin:50px 20px;
 $padding: 20px;
 $display: flex;
+$justify: center;
+$align: center;
+$borderRadius: 6px;
+$background: rgb(238, 140, 140);
 
 mat-card{
     margin: $margin;
@@ -17,9 +21,22 @@ button{
     margin-bottom: 12px;
 }
 
+button:disabled{
+    cursor: no-drop;
+}
+
 
 h1{
     text-align: $textAlign;
+}
+
+span{
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+    border-radius: $borderRadius;
+    background-color: $background;
+    padding: 10px;
 }
 
 
