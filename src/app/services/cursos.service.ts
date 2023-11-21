@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ICursos } from '../models/ICursos';
-import { first } from 'rxjs';
+import { delay, first } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,7 @@ export class CursosService {
 
    list(){
     return this.http.get<ICursos[]>(this.baseURL).pipe(
+      delay(2500),
       first()
     );
    }

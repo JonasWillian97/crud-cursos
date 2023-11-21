@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 import { ICursos } from 'src/app/models/ICursos';
 import { CursosService } from 'src/app/services/cursos.service';
 
@@ -19,8 +19,16 @@ export class TableComponent {
         this.getAll();
   }
 
+ 
+
   getAll(){
-    this.cursos$ = this.cursosService.list();
+    this.cursos$ = this.cursosService.list().pipe(
+      catchError(error => {
+      console.log(error),
+      this.toastr.error('ERRO ao carregar cursos!')
+      return of([])
+      })
+    );
   }
 
   delete(id: number){

@@ -3,6 +3,9 @@ $width: 100%;
 $background: transparent;
 $border: none;
 $cursor: pointer;
+$display: flex;
+$align: center;
+$justify: center;
 
 mat-card{
     margin: 50px 20px;
@@ -36,4 +39,10 @@ button{
 
 .delete{
     color: red;
+}
+
+.spinner{
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
 }

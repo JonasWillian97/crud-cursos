@@ -9,6 +9,7 @@ import { TableComponent } from './table/table.component';
 import { MaterialModule } from '../material/material.module';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CadastrarCursosComponent,
     AtualizarCursosComponent,
     TableComponent,
-    FormComponent
+    FormComponent,
+    LoadingComponent
   ],
   imports: [
     CommonModule,

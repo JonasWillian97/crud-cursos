@@ -1,13 +1,15 @@
 <mat-card>
+  <div *ngIf="cursos$ | async as curso; else loading">
   <button class="add" routerLink="cadastrar">
     <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add"></mat-icon>
   </button>
 
-    <table mat-table [dataSource]="cursos$" class="mat-elevation-z8">
+    <table mat-table [dataSource]="curso" class="mat-elevation-z8">
 
+        
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
-      
+              
         <!-- Position Column -->
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -45,10 +47,18 @@
             </button>
           </td>
         </ng-container>
-      
+        
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
       </table>
+    </div>
+      <ng-template #loading>
+        <div class="spinner">
+          <app-loading></app-loading>
+         
+        </div>
+      </ng-template>
       
       
 </mat-card>
