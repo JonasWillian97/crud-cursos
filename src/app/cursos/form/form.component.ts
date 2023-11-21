@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { NonNullableFormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { catchError } from 'rxjs';
+import { ICursos } from 'src/app/models/ICursos';
 import { CursosService } from 'src/app/services/cursos.service';
 
 @Component({
@@ -26,8 +27,22 @@ export class FormComponent {
   constructor(private fb: NonNullableFormBuilder,
     private cursosService: CursosService,
     private toastr: ToastrService,
+    private route: ActivatedRoute,
     private router: Router){
 
+      const id = Number(this.route.snapshot.paramMap.get('id'));
+      this.cursosService.getById(id).subscribe(curso => {
+        this.update (curso)
+      })
+  }
+
+  update(curso: ICursos){
+    this.form.patchValue({
+      id: curso.id,
+      name: curso.name,
+      category: curso.category,
+      price: curso.price
+    })
   }
 
   get name(){
@@ -50,7 +65,16 @@ export class FormComponent {
         this.toastr.success('CURSO cadastrado com sucesso!')
         this.router.navigate(['cursos']);
       })
+      if(this.form.valid) {
+        this.cursosService.alter(this.form.value).subscribe(curso => {
+          this.toastr.success('CURSO atualizado com sucesso!')
+          this.router.navigate(['cursos'])
+        })
+      }
     }
+     else {
+      this.toastr.error('NÃO foi possível realizar a sua ação!');
+     }
 }
   onCancell(){
     this.router.navigate(['cursos'])
