@@ -37,4 +37,10 @@ export class CursosService {
       first()
     );
    }
+
+   remove(id: number){
+    return this.http.delete<ICursos>(`${this.baseURL}/${id}`).pipe(
+      first()
+    );
+   }
 }
