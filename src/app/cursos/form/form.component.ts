@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { NonNullableFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { catchError } from 'rxjs';
 import { CursosService } from 'src/app/services/cursos.service';
 
 @Component({
@@ -11,6 +13,9 @@ import { CursosService } from 'src/app/services/cursos.service';
 export class FormComponent {
   @Input() h1register:string = "";
   @Input() h1update: string = "";
+
+  submitted: boolean = false;
+
   form = this.fb.group({
     id:[''],
     name:['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
@@ -20,6 +25,7 @@ export class FormComponent {
 
   constructor(private fb: NonNullableFormBuilder,
     private cursosService: CursosService,
+    private toastr: ToastrService,
     private router: Router){
 
   }
@@ -39,9 +45,13 @@ export class FormComponent {
   }
 
   onSubmit(){
-
-  }
-
+    if(this.form.valid) {
+      this.cursosService.save(this.form.value).subscribe(curso => {
+        this.toastr.success('CURSO cadastrado com sucesso!')
+        this.router.navigate(['cursos']);
+      })
+    }
+}
   onCancell(){
     this.router.navigate(['cursos'])
   }

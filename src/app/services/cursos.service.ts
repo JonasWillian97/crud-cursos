@@ -16,4 +16,8 @@ export class CursosService {
    list(){
     return this.http.get<ICursos[]>(this.baseURL);
    }
+
+   save(curso:  Partial <ICursos>){
+    return this.http.post<ICursos>(this.baseURL, curso );
+   }
 }
