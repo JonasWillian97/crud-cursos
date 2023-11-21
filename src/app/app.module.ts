@@ -15,6 +15,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContatoComponent } from './pages/contato/contato.component';
 
 import localePt from '@angular/common/locales/pt';
+import { LoginComponent } from './login/login.component';
 
 registerLocaleData(localePt);
 
@@ -25,6 +26,7 @@ registerLocaleData(localePt);
     FooterComponent,
     HomeComponent,
     ContatoComponent,
+    LoginComponent,
   
   ],
   imports: [
