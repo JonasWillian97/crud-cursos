@@ -7,7 +7,7 @@ import { AtualizarCursosComponent } from './atualizar-cursos/atualizar-cursos.co
 const routes: Routes = [
   {path:'', component: ListarCursosComponent},
   {path:'cadastrar', component: CadastrarCursosComponent},
-  {path:'atualizar', component: AtualizarCursosComponent}
+  {path:'atualizar/:id', component: AtualizarCursosComponent}
 ];
 
 @NgModule({
