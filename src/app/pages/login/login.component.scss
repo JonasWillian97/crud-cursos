@@ -1,0 +1,32 @@
+$padding: 20px;
+$margin: 50px 20px;
+$textAlign: center;
+$background: rgb(219, 131, 131);
+$color: #fff;
+$display: flex;
+$justify: center;
+$borderRadius: 6px;
+
+
+mat-card{
+    padding: $padding;
+    margin: $margin;
+}
+
+form {
+    display: $display;
+    flex-direction: column;
+}
+
+h1{
+    text-align: $textAlign;
+}
+
+span{
+    background-color: $background;
+    color: $color;
+    display: $display;
+    justify-content: $justify;
+    padding: 10px;
+    border-radius: $borderRadius;
+}   

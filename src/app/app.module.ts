@@ -15,7 +15,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContatoComponent } from './pages/contato/contato.component';
 
 import localePt from '@angular/common/locales/pt';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData(localePt);
 
@@ -36,7 +37,8 @@ registerLocaleData(localePt);
     MaterialModule,
     CursosModule,
     ToastrModule.forRoot(), // ToastrModule added
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [ {provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent]
