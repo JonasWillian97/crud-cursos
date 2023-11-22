@@ -12,7 +12,14 @@ export class LoginService {
 
    }
 
-   
+   isAuthenticated():boolean{
+    let user = this.userName.getValue();
+    if(user){
+      return true;
+    } else {
+      return false;
+    }
+   }
 
    getUsername(){
     return this.userName.asObservable();

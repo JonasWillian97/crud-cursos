@@ -17,6 +17,7 @@ import { ContatoComponent } from './pages/contato/contato.component';
 import localePt from '@angular/common/locales/pt';
 import { LoginComponent } from './pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Authguard } from './services/authguard';
 
 registerLocaleData(localePt);
 
@@ -40,7 +41,7 @@ registerLocaleData(localePt);
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [ {provide: LOCALE_ID, useValue: 'pt' }],
+  providers: [ {provide: LOCALE_ID, useValue: 'pt' }, Authguard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
