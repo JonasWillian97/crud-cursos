@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,11 +8,15 @@ import { Component, Input } from '@angular/core';
 })
 export class NavBarComponent {
   @Input() Drawer: any;
-  loggedUser: string = "Jonas";
+  loggedUser: string = "";
 
-  constructor(){
-
+  constructor(private loginService: LoginService){
+    this.loginService.getUsername().subscribe(retorno => {
+      this.loggedUser = retorno;
+    })
   }
+
+
 
   showMenu(){
     return this.Drawer.toggle();
